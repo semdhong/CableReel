@@ -1,0 +1,9 @@
+D:\Users\semdhong\source\repos\SEMDEVWEB\BlazorCableReel\Shared\bin\Debug\netstandard2.0\BlazorCableReel.Shared.deps.json
+D:\Users\semdhong\source\repos\SEMDEVWEB\BlazorCableReel\Shared\bin\Debug\netstandard2.0\BlazorCableReel.Shared.dll
+D:\Users\semdhong\source\repos\SEMDEVWEB\BlazorCableReel\Shared\bin\Debug\netstandard2.0\BlazorCableReel.Shared.pdb
+D:\Users\semdhong\source\repos\SEMDEVWEB\BlazorCableReel\Shared\obj\Debug\netstandard2.0\BlazorCableReel.Shared.AssemblyInfoInputs.cache
+D:\Users\semdhong\source\repos\SEMDEVWEB\BlazorCableReel\Shared\obj\Debug\netstandard2.0\BlazorCableReel.Shared.AssemblyInfo.cs
+D:\Users\semdhong\source\repos\SEMDEVWEB\BlazorCableReel\Shared\obj\Debug\netstandard2.0\BlazorCableReel.Shared.dll
+D:\Users\semdhong\source\repos\SEMDEVWEB\BlazorCableReel\Shared\obj\Debug\netstandard2.0\BlazorCableReel.Shared.pdb
+D:\Users\semdhong\source\repos\SEMDEVWEB\BlazorCableReel\Shared\obj\Debug\netstandard2.0\BlazorCableReel.Shared.csproj.CoreCompileInputs.cache
+D:\Users\semdhong\source\repos\SEMDEVWEB\BlazorCableReel\Shared\obj\Debug\netstandard2.0\BlazorCableReel.Shared.csprojAssemblyReference.cache

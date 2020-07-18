@@ -1,0 +1,22 @@
+﻿@page "/maintenance/uoms/edit/{uomId:int}"
+@inject HttpClient http
+@inject NavigationManager navmgr
+
+<h3>Edit Uom</h3>
+<UomForm Uom="Uom" ButtonText="Edit Uom" OnValidSubmit="@EditUom" />
+
+@code {
+    [Parameter] public int UomId { get; set; }
+    Uom Uom = new BlazorCableReel.Shared.Models.Uom();
+
+    protected async override Task OnParametersSetAsync()
+    {
+        Uom = await http.GetJsonAsync<Uom>($"uom/{UomId}");
+    }
+
+    async Task EditUom()
+    {
+        await http.PutJsonAsync("uom", Uom);
+        navmgr.NavigateTo("/maintenance/uoms");
+    }
+}

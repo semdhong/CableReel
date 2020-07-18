@@ -1,0 +1,64 @@
+﻿<h3>Unit of Measure</h3>
+@page "/maintenance/uoms"
+@inject HttpClient http
+@inject IJSRuntime js
+
+<a class="btn btn-success" href="/maintenance/uoms/create">Create New</a>
+@if (uoms == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+
+                <th>S/N</th>
+                <th>Scope Name</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var uom in uoms)
+            {
+                <tr>
+                    <td>
+                        <a class="btn btn-info" href="/maintenance/uoms/edit/@uom.Id">Edit</a>
+                        <a class="btn btn-danger" @onclick="@(()=>DeleteUom(uom.Id))">Delete</a>
+                    </td>
+
+                    <td>@uom.Id</td>
+                    <td>@uom.UomName</td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    List<Uom> uoms { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadUoms();
+    }
+
+    async Task LoadUoms()
+    {
+        uoms = await http.GetJsonAsync<List<Uom>>("uom");
+    }
+
+    async Task DeleteUom(int uomId)
+    {
+        var scopeSelected = uoms.First(x => x.Id == uomId);
+        if (await js.InvokeAsync<bool>("confirm", $"Do you want to delete {scopeSelected.UomName}?"))
+        {
+            await http.DeleteAsync($"uom/{uomId}");
+            await LoadUoms();
+        }
+    }
+}

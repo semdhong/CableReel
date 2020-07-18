@@ -1,0 +1,17 @@
+﻿@page "/maintenance/sites/create"
+@inject HttpClient http
+@inject NavigationManager navmgr
+
+<h3>Create Sites</h3>
+<SiteForm Site="@site" ButtonText="Create Site" OnValidSubmit="@CreateSite" />
+
+@code {
+
+    Site site = new BlazorCableReel.Shared.Models.Site();
+
+    async Task CreateSite()
+    {
+        await http.PostJsonAsync("sites", site);
+        navmgr.NavigateTo("/maintenance/sites");
+    }
+}

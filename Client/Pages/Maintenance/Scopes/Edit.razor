@@ -1,0 +1,22 @@
+﻿@page "/maintenance/scopes/edit/{scopeId:int}"
+@inject HttpClient http
+@inject NavigationManager navmgr
+
+<h3>Edit Scope</h3>
+<ScopeForm Scope="scope" ButtonText="Edit Scope" OnValidSubmit="@EditScope" />
+
+@code {
+    [Parameter] public int scopeId { get; set; }
+    Scope scope = new BlazorCableReel.Shared.Models.Scope();
+
+    protected async override Task OnParametersSetAsync()
+    {
+        scope = await http.GetJsonAsync<Scope>($"scope/{scopeId}");
+    }
+
+    async Task EditScope()
+    {
+        await http.PutJsonAsync("scope", scope);
+        navmgr.NavigateTo("/maintenance/scopes");
+    }
+}

@@ -1,0 +1,66 @@
+﻿<h3>Materials</h3>
+@page "/maintenance/materials"
+@inject HttpClient http
+@inject IJSRuntime js
+
+<a class="btn btn-success" href="maintenance/materials/create">Create New</a>
+@if (materials == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+
+                <th>S/N</th>
+                <th>Code</th>
+                <th>Description</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var mat in materials)
+            {
+            <tr>
+                <td>
+                    <a class="btn btn-info" href="/maintenance/materials/edit/@mat.Id">Edit</a>
+                    <a class="btn btn-danger" @onclick="@(()=>DeleteMaterial(mat.Id))">Delete</a>
+                </td>
+
+                <td>@mat.Id</td>
+                <td>@mat.Code</td>
+                <td>@mat.Description</td>
+
+            </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    List<Material> materials { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadMaterials();
+    }
+
+    async Task LoadMaterials()
+    {
+        materials = await http.GetJsonAsync<List<Material>>("materials");
+    }
+
+    async Task DeleteMaterial(int materialId)
+    {
+        var scopeSelected = materials.First(x => x.Id == materialId);
+        if (await js.InvokeAsync<bool>("confirm", $"Do you want to delete {scopeSelected.Description}?"))
+        {
+            await http.DeleteAsync($"materials/{materialId}");
+            await LoadMaterials();
+        }
+    }
+}

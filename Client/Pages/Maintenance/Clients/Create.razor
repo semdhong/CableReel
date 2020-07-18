@@ -1,0 +1,18 @@
+﻿@page "/maintenance/clients/create"
+@inject HttpClient http
+@inject NavigationManager navmgr
+
+<h3>Create Client</h3>
+<ClientForm Client="@client" ButtonText="Create Client" OnValidSubmit="@CreateClient"/>
+
+@code {
+
+    Client client = new BlazorCableReel.Shared.Models.Client();
+
+    async Task CreateClient()
+    {
+        await http.PostJsonAsync("client", client);
+        navmgr.NavigateTo("/maintenance/clients");
+    }
+}
+

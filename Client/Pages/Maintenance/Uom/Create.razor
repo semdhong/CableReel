@@ -1,0 +1,18 @@
+﻿@page "/maintenance/uoms/create"
+@inject HttpClient http
+@inject NavigationManager navmgr
+
+<h3>Create Uom</h3>
+<UomForm Uom="@Uom" ButtonText="Create Uom" OnValidSubmit="@CreateUom" />
+
+@code {
+
+    Uom Uom = new BlazorCableReel.Shared.Models.Uom();
+
+    async Task CreateUom()
+    {
+        await http.PostJsonAsync("uom", Uom);
+        navmgr.NavigateTo("/maintenance/uoms");
+    }
+}
+

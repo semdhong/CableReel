@@ -1,0 +1,21 @@
+﻿@page "/maintenance/sites/edit/{siteId:int}"
+@inject HttpClient http
+@inject NavigationManager navmgr
+<h3>Edit Site</h3>
+<SiteForm Site="site" ButtonText="Edit Site" OnValidSubmit="@EditSite" />
+
+@code {
+    [Parameter] public int siteId { get; set; }
+    Site site = new BlazorCableReel.Shared.Models.Site();
+
+    protected async override Task OnParametersSetAsync()
+    {
+        site = await http.GetJsonAsync<Site>($"sites/{siteId}");
+    }
+
+    async Task EditSite()
+    {
+        await http.PutJsonAsync("sites", site);
+        navmgr.NavigateTo("/maintenance/sites");
+    }
+}

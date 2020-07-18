@@ -1,0 +1,18 @@
+﻿@page "/maintenance/scopes/create"
+@inject HttpClient http
+@inject NavigationManager navmgr
+
+<h3>Create Scope</h3>
+<ScopeForm Scope="@scope" ButtonText="Create Scope" OnValidSubmit="@CreateScope" />
+
+@code {
+
+    Scope scope = new BlazorCableReel.Shared.Models.Scope();
+
+    async Task CreateScope()
+    {
+        await http.PostJsonAsync("scope", scope);
+        navmgr.NavigateTo("/maintenance/scopes");
+    }
+}
+

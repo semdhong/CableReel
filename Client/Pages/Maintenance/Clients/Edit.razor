@@ -1,0 +1,22 @@
+﻿@page "/maintenance/clients/edit/{clientId:int}"
+@inject HttpClient http
+@inject NavigationManager navmgr
+
+<h3>Edit Site</h3>
+<ClientForm Client="client" ButtonText="Edit Client" OnValidSubmit="@EditClient" />
+
+@code {
+    [Parameter] public int clientId { get; set; }
+    Client client = new BlazorCableReel.Shared.Models.Client();
+
+    protected async override Task OnParametersSetAsync()
+    {
+        client = await http.GetJsonAsync<Client>($"client/{clientId}");
+    }
+
+    async Task EditClient()
+    {
+        await http.PutJsonAsync("client", client);
+        navmgr.NavigateTo("/maintenance/clients");
+    }
+}

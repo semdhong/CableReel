@@ -1,0 +1,70 @@
+﻿<h3>Clients</h3>
+@page "/maintenance/clients"
+@inject HttpClient http
+@inject IJSRuntime js
+
+<a  class="btn btn-success" href="maintenance/clients/create">Create New</a>
+@if (clients == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+
+                <th>S/N</th>
+                <th>Business Name</th>
+                <th>Shortname</th>
+               
+
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var client in clients)
+            {
+            <tr>
+                <td>
+                    <a class="btn btn-info" href="/maintenance/clients/edit/@client.Id">Edit</a>
+                    <a class="btn btn-danger" @onclick="@(()=>DeleteClient(client.Id))">Delete</a>
+                </td>
+
+                <td>@client.Id</td>
+                <td>@client.BusinessName</td>
+                <td>@client.Shortname</td>
+              
+
+
+            </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    List<Client> clients { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadClients();
+    }
+
+    async Task LoadClients()
+    {
+        clients = await http.GetJsonAsync<List<Client>>("client");
+    }
+
+    async Task DeleteClient(int clientId)
+    {
+        var clientSelected = clients.First(x => x.Id == clientId);
+        if (await js.InvokeAsync<bool>("confirm", $"Do you want to delete {clientSelected.Shortname}?"))
+        {
+            await http.DeleteAsync($"client/{clientId}");
+            await LoadClients();
+        }
+    }
+}

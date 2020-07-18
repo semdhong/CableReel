@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "CRgznc/1tt6NOKJ/ruEr7VtOsYsUSmTReGKOnGDx+U5jfjntm3Bh5cq4xY4RBY7YGEt51PCviSkZ8YZB8bqhEA==",
+  "success": true,
+  "projectFilePath": "D:\\Users\\semdhong\\source\\repos\\SEMDEVWEB\\BlazorCableReel\\Shared\\BlazorCableReel.Shared.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\semdhong\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\semdhong\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\semdhong\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,64 @@
+﻿<h3>Scopes</h3>
+@page "/maintenance/scopes"
+@inject HttpClient http
+@inject IJSRuntime js
+
+<a class="btn btn-success" href="maintenance/scopes/create">Create New</a>
+@if (scopes == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+
+                <th>S/N</th>
+                <th>Scope Name</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var scope in scopes)
+            {
+                <tr>
+                    <td>
+                        <a class="btn btn-info" href="/maintenance/scopes/edit/@scope.Id">Edit</a>
+                        <a class="btn btn-danger" @onclick="@(()=>DeleteScope(scope.Id))">Delete</a>
+                    </td>
+
+                    <td>@scope.Id</td>
+                    <td>@scope.ScopeName</td>
+                 
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    List<Scope> scopes { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadScopes();
+    }
+
+    async Task LoadScopes()
+    {
+        scopes = await http.GetJsonAsync<List<Scope>>("scope");
+    }
+
+    async Task DeleteScope(int scopeId)
+    {
+        var scopeSelected = scopes.First(x => x.Id == scopeId);
+        if (await js.InvokeAsync<bool>("confirm", $"Do you want to delete {scopeSelected.ScopeName}?"))
+        {
+            await http.DeleteAsync($"scope/{scopeId}");
+            await LoadScopes();
+        }
+    }
+}

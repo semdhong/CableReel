@@ -1,0 +1,22 @@
+﻿@page "/maintenance/materials/edit/{materialId:int}"
+@inject HttpClient http
+@inject NavigationManager navmgr
+
+<h3>Edit Material</h3>
+<MaterialForm Material="material" ButtonText="Edit Material" OnValidSubmit="@EditMaterial" />
+
+@code {
+    [Parameter] public int materialId { get; set; }
+    Material material = new BlazorCableReel.Shared.Models.Material();
+
+    protected async override Task OnParametersSetAsync()
+    {
+        material = await http.GetJsonAsync<Material>($"materials/{materialId}");
+    }
+
+    async Task EditMaterial()
+    {
+        await http.PutJsonAsync("materials", material);
+        navmgr.NavigateTo("/maintenance/materials");
+    }
+}

@@ -1,0 +1,74 @@
+﻿<h3>Sites</h3>
+@page "/maintenance/sites"
+@inject HttpClient http
+@inject IJSRuntime js
+
+<a  class="btn btn-success" href="maintenance/sites/create">Create New</a>
+@if (sites == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+
+                <th>S/N</th>
+                <th>Homing Id</th>
+                <th>Site Id</th>
+                <th>Site Name</th>
+                <th>Brgy</th>
+                <th>PO Ref.</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var site in sites)
+            {
+            <tr>
+                <td>
+                    <a class="btn btn-info" href="/maintenance/sites/edit/@site.Id">Edit</a>
+                    <a class="btn btn-danger" @onclick="@(()=>DeleteSite(site.Id))">Delete</a>
+                </td>
+
+                <td>@site.Id</td>
+                <td>@site.Homing</td>
+                <td>@site.SiteId</td>
+                <td>@site.SiteName</td>
+                <td>@site.Brgy</td>
+                <td>@site.Poid</td>
+
+
+            </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    List<Site> sites { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadSites();
+    }
+
+    async Task LoadSites()
+    {
+        sites = await http.GetJsonAsync<List<Site>>("sites");
+    }
+
+    async Task DeleteSite(int siteId)
+    {
+        var siteSelected = sites.First(x => x.Id == siteId);
+        if (await js.InvokeAsync<bool>("confirm", $"Do you want to delete {siteSelected.SiteName}?"))
+        {
+            await http.DeleteAsync($"sites/{siteId}");
+            await LoadSites();
+        }
+    }
+}

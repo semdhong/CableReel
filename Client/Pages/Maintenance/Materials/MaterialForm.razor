@@ -1,0 +1,31 @@
+﻿<EditForm Model="@Material" OnValidSubmit="OnValidSubmit">
+    <DataAnnotationsValidator />
+    <div class="form-group">
+        <label>Material Code</label>
+        <div>
+            <InputText class="col-md-4 form-control" @bind-Value="@Material.Code" />
+            <ValidationMessage For="@(() => Material.Code)" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Material Description</label>
+        <div>
+            <InputText class="col-md-4 form-control" @bind-Value="@Material.Description" />
+            <ValidationMessage For="@(() => Material.Description)" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-dark">
+            @ButtonText
+        </button>
+    </div>
+
+
+</EditForm>
+@code {
+
+    [Parameter] public Material Material { get; set; }
+    [Parameter] public string ButtonText { get; set; } = "Save";
+    [Parameter] public EventCallback OnValidSubmit { get; set; }
+}

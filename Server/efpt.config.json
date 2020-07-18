@@ -1,0 +1,94 @@
+﻿{
+   "ContextClassName": "Cablereel_DevContext",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "DoNotCombineNamespace": false,
+   "IdReplace": false,
+   "IncludeConnectionString": true,
+   "ModelNamespace": null,
+   "OutputContextPath": "Data",
+   "OutputPath": "Models",
+   "ProjectRootNamespace": "BlazorCableReel.Server",
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 0,
+   "Tables": [
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[BOQEntry]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[BOQSetup]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Client]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[DesignRepo]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Materials]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[ProjectMaster]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[ProjectMaterials]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[ProjectScope]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[ProjectScopeProgress]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[ProjectSite]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[ProjectType]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[RTA]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Scope]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Sites]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Stage]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Status]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[TeamLeader]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[UOM]"
+      }
+   ],
+   "UseDatabaseNames": false,
+   "UseFluentApiOnly": false,
+   "UseHandleBars": false,
+   "UseInflector": true,
+   "UseLegacyPluralizer": false,
+   "UseSpatial": false
+}

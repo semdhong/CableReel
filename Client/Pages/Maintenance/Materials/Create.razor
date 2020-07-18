@@ -1,0 +1,18 @@
+﻿@page "/maintenance/materials/create"
+@inject HttpClient http
+@inject NavigationManager navmgr
+
+<h3>Create Material</h3>
+<MaterialForm Material="@Material" ButtonText="Create Material" OnValidSubmit="@CreateMaterial" />
+
+@code {
+
+    Material Material = new BlazorCableReel.Shared.Models.Material();
+
+    async Task CreateMaterial()
+    {
+        await http.PostJsonAsync("materials", Material);
+        navmgr.NavigateTo("/maintenance/materials");
+    }
+}
+

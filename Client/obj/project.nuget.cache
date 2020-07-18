@@ -1,0 +1,48 @@
+{
+  "version": 2,
+  "dgSpecHash": "HIiMEy7KnmXSZfP7v8UoXFyrf/+82WvwKMTfUSRs9PM1JXh3KxEodJswzFOeY9cpz3apamSFmPbFGwcOOjsiAw==",
+  "success": false,
+  "projectFilePath": "C:\\Users\\semdhong\\Documents\\GitHub\\SEMDEVWEB\\BlazorCableReel\\Client\\BlazorCableReel.Client.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\semdhong\\.nuget\\packages\\microsoft.aspnetcore.authorization\\3.1.0-preview1.19508.20\\microsoft.aspnetcore.authorization.3.1.0-preview1.19508.20.nupkg.sha512",
+    "C:\\Users\\semdhong\\.nuget\\packages\\microsoft.aspnetcore.blazor\\3.1.0-preview1.19508.20\\microsoft.aspnetcore.blazor.3.1.0-preview1.19508.20.nupkg.sha512",
+    "C:\\Users\\semdhong\\.nuget\\packages\\microsoft.aspnetcore.blazor.build\\3.1.0-preview1.19508.20\\microsoft.aspnetcore.blazor.build.3.1.0-preview1.19508.20.nupkg.sha512",
+    "C:\\Users\\semdhong\\.nuget\\packages\\microsoft.aspnetcore.blazor.devserver\\3.1.0-preview1.19508.20\\microsoft.aspnetcore.blazor.devserver.3.1.0-preview1.19508.20.nupkg.sha512",
+    "C:\\Users\\semdhong\\.nuget\\packages\\microsoft.aspnetcore.blazor.httpclient\\3.1.0-preview1.19508.20\\microsoft.aspnetcore.blazor.httpclient.3.1.0-preview1.19508.20.nupkg.sha512",
+    "C:\\Users\\semdhong\\.nuget\\packages\\microsoft.aspnetcore.blazor.mono\\3.1.0-preview1.19503.1\\microsoft.aspnetcore.blazor.mono.3.1.0-preview1.19503.1.nupkg.sha512",
+    "C:\\Users\\semdhong\\.nuget\\packages\\microsoft.aspnetcore.components\\3.1.0-preview1.19508.20\\microsoft.aspnetcore.components.3.1.0-preview1.19508.20.nupkg.sha512",
+    "C:\\Users\\semdhong\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\3.1.0-preview1.19508.20\\microsoft.aspnetcore.components.analyzers.3.1.0-preview1.19508.20.nupkg.sha512",
+    "C:\\Users\\semdhong\\.nuget\\packages\\microsoft.aspnetcore.components.forms\\3.1.0-preview1.19508.20\\microsoft.aspnetcore.components.forms.3.1.0-preview1.19508.20.nupkg.sha512",
+    "C:\\Users\\semdhong\\.nuget\\packages\\microsoft.aspnetcore.components.web\\3.1.0-preview1.19508.20\\microsoft.aspnetcore.components.web.3.1.0-preview1.19508.20.nupkg.sha512",
+    "C:\\Users\\semdhong\\.nuget\\packages\\microsoft.aspnetcore.metadata\\3.1.0-preview1.19508.20\\microsoft.aspnetcore.metadata.3.1.0-preview1.19508.20.nupkg.sha512",
+    "C:\\Users\\semdhong\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0-preview1.19504.10\\microsoft.bcl.asyncinterfaces.1.1.0-preview1.19504.10.nupkg.sha512",
+    "C:\\Users\\semdhong\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\3.1.0-preview1.19506.1\\microsoft.extensions.dependencyinjection.3.1.0-preview1.19506.1.nupkg.sha512",
+    "C:\\Users\\semdhong\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.0-preview1.19506.1\\microsoft.extensions.dependencyinjection.abstractions.3.1.0-preview1.19506.1.nupkg.sha512",
+    "C:\\Users\\semdhong\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.0-preview1.19506.1\\microsoft.extensions.logging.abstractions.3.1.0-preview1.19506.1.nupkg.sha512",
+    "C:\\Users\\semdhong\\.nuget\\packages\\microsoft.extensions.options\\3.1.0-preview1.19506.1\\microsoft.extensions.options.3.1.0-preview1.19506.1.nupkg.sha512",
+    "C:\\Users\\semdhong\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.0-preview1.19506.1\\microsoft.extensions.primitives.3.1.0-preview1.19506.1.nupkg.sha512",
+    "C:\\Users\\semdhong\\.nuget\\packages\\microsoft.jsinterop\\3.1.0-preview1.19506.1\\microsoft.jsinterop.3.1.0-preview1.19506.1.nupkg.sha512",
+    "C:\\Users\\semdhong\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\semdhong\\.nuget\\packages\\mono.webassembly.interop\\3.1.0-preview1.19506.1\\mono.webassembly.interop.3.1.0-preview1.19506.1.nupkg.sha512",
+    "C:\\Users\\semdhong\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\semdhong\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
+    "C:\\Users\\semdhong\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0-preview1.19504.10\\system.componentmodel.annotations.4.7.0-preview1.19504.10.nupkg.sha512",
+    "C:\\Users\\semdhong\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
+    "C:\\Users\\semdhong\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\semdhong\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.7.0-preview1.19504.10\\system.runtime.compilerservices.unsafe.4.7.0-preview1.19504.10.nupkg.sha512",
+    "C:\\Users\\semdhong\\.nuget\\packages\\system.text.encodings.web\\4.7.0-preview1.19504.10\\system.text.encodings.web.4.7.0-preview1.19504.10.nupkg.sha512",
+    "C:\\Users\\semdhong\\.nuget\\packages\\system.text.json\\4.7.0-preview1.19504.10\\system.text.json.4.7.0-preview1.19504.10.nupkg.sha512",
+    "C:\\Users\\semdhong\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.2\\system.threading.tasks.extensions.4.5.2.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1105",
+      "level": "Error",
+      "message": "Unable to find project information for 'C:\\Users\\semdhong\\Documents\\GitHub\\SEMDEVWEB\\BlazorCableReel\\Shared\\BlazorCableReel.Shared.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
+      "libraryId": "C:\\Users\\semdhong\\Documents\\GitHub\\SEMDEVWEB\\BlazorCableReel\\Shared\\BlazorCableReel.Shared.csproj",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
+}
